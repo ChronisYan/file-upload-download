@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div>
+      <!-- Single file upload form -->
+      <!--You need to include the enctype -->
+      <form action="/fileupload" method="POST" enctype="multipart/form-data">
+        <label for="file">Select a file</label>
+        <input type="file" name="file" id="file" required />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+
+    <br /><br />
+    <hr />
+    <br /><br />
+    <!-- multiple file upload form -->
+    <div>
+      <form
+        action="/uploadmultiplefiles"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="mFile1"></label>
+        <input type="file" name="mFile1" id="mFile1" />
+        <label for="mFile2"></label>
+        <input type="file" name="mFile2" id="mFile2" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <br /><br />
+    <br /><br />
+    <h1>Gallery</h1>
+    <hr />
+    <!-- Download file from the web -->
+    <form action="/downloadFile" method="post">
+      <label for="fileUrl"></label>
+      <input type="text" name="fileUrl" id="fileUrl" required />
+      <input type="submit" value="submit" />
+    </form>
+    <br /><br />
+    <br /><br />
+    <h1>Gallery</h1>
+    <hr />
+    <div class="gallery">
+      <% fileNames.forEach(imgSrc =>{ %>
+      <img src="<%= imgSrc %> " alt="<%= imgSrc %>" width="200" />
+      <% }); %>
+    </div>
+  </body>
+</html>

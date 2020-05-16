@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.imgCover {
+  width: inherit;
+  height: inherit;
+  z-index: 9999;
+  background: transparent;
+}
